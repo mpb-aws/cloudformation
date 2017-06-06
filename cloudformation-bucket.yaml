@@ -1,0 +1,44 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: >
+  CloudFormation template to create a S3 bucket for CloudFormation.
+  
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups: 
+      - 
+        Label: 
+          default: "CloudFormation Resource Configuration"
+        Parameters: 
+          - BucketName
+    ParameterLabels: 
+      BucketName: 
+        default: "S3 Bucket Name"
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Enter the name of the S3 bucket to be created
+    Default: "mpb--cloudformation"
+    AllowedPattern: ^[-A-Za-z0-9]+$
+
+Resources:
+  Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+        - Id: DeleteRule
+          Status: Enabled
+          NoncurrentVersionExpirationInDays: 7
+
+Outputs:
+  CloudFormationBucket:
+    Description: The name of the CloudFormation S3 bucket for this account
+    Value: !Ref Bucket
+    Export:
+      Name: CloudTrail-Bucket
