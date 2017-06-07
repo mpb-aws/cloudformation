@@ -41,4 +41,4 @@ Outputs:
     Description: The name of the CloudFormation S3 bucket for this account
     Value: !Ref Bucket
     Export:
-      Name: CloudTrail-Bucket
+      Name: CloudFormation-Bucket
