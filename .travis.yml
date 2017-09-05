@@ -15,7 +15,4 @@ script:
   - aws cloudformation validate-template --template-body file://cloudformation-bucket.yaml
 
 after_success:
-  - echo "SUCCCESS"
-
-after_failure:
-  - echo "FAILURE"
+  - aws cloudformation create-stack --stack-name Cloudformation-Bucket --template-body file://cloudformation-bucket.yaml
