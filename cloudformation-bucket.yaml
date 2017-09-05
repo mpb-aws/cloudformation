@@ -3,17 +3,17 @@ AWSTemplateFormatVersion: "2010-09-09"
 
 Description: >
   CloudFormation template to create a S3 bucket for CloudFormation.
-  
+
 Metadata:
   AWS::CloudFormation::Interface:
-    ParameterGroups: 
-      - 
-        Label: 
+    ParameterGroups:
+      -
+        Label:
           default: "CloudFormation Resource Configuration"
-        Parameters: 
+        Parameters:
           - BucketName
-    ParameterLabels: 
-      BucketName: 
+    ParameterLabels:
+      BucketName:
         default: "S3 Bucket Name"
 
 Parameters:
