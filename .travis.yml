@@ -11,8 +11,8 @@ script:
   #- aws cloudformation validate-template --template-body file://cloudformation/my-template.yml
   #- yaml-lint cloudformation/my-template.yml
 
-after_success
+after_success:
   - echo "SUCCCESS"
 
-after_failure
+after_failure:
   - echo "FAILURE"
