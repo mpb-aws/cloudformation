@@ -13,6 +13,4 @@ install:
 script:
   - yamllint cloudformation-bucket.yaml
   - aws cloudformation validate-template --template-body file://cloudformation-bucket.yaml
-
-after_success:
   - aws cloudformation create-stack --stack-name Cloudformation-Bucket --template-body file://cloudformation-bucket.yaml
