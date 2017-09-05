@@ -8,7 +8,8 @@ install:
   - pip install yamllint
 
 script:
-  - ls -l cloudformation
+  - pwd
+  - ls -l
   #- aws cloudformation validate-template --template-body file://cloudformation/my-template.yml
   #- yaml-lint cloudformation/my-template.yml
 
