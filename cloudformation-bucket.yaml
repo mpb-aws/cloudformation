@@ -20,7 +20,6 @@ Parameters:
   BucketName:
     Type: String
     Description: Enter the name of the S3 bucket to be created
-    Default: "mpb--cloudformation"
     AllowedPattern: ^[-A-Za-z0-9]+$
 
 Resources:
