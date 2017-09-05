@@ -8,8 +8,6 @@ install:
   - pip install yamllint
 
 script:
-  - pwd
-  - ls -l
   - yamllint cloudformation-bucket.yaml
   #- aws cloudformation validate-template --template-body file://cloudformation/my-template.yml
   
