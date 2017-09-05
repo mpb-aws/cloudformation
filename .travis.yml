@@ -1,0 +1,18 @@
+language: python
+
+install:
+  - echo "Installing AWS CLI"
+  - pip install --upgrade --user awscli
+  - echo "Installing YAML Linter"
+  - pip install yamllint
+
+script:
+  - ll cloudformation
+  #- aws cloudformation validate-template --template-body file://cloudformation/my-template.yml
+  #- yaml-lint cloudformation/my-template.yml
+
+after_success
+  - echo "SUCCCESS"
+
+after_failure
+  - echo "FAILURE"
