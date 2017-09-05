@@ -9,8 +9,7 @@ install:
 
 script:
   - yamllint cloudformation-bucket.yaml
-  #- aws cloudformation validate-template --template-body file://cloudformation/my-template.yml
-  
+  - aws cloudformation validate-template --template-body file://cloudformation-bucket.yaml
 
 after_success:
   - echo "SUCCCESS"
