@@ -4,13 +4,11 @@ python:
   - "3.6"
 
 install:
-  - echo "Installing AWS CLI"
   - pip install --upgrade awscli
-  - echo "Installing YAML Linter"
   - pip install yamllint
 
 script:
-  - ll cloudformation
+  - ls -l cloudformation
   #- aws cloudformation validate-template --template-body file://cloudformation/my-template.yml
   #- yaml-lint cloudformation/my-template.yml
 
