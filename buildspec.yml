@@ -11,4 +11,5 @@ phases:
       - pip install yamllint
   build:
     commands:
-      - ls -al
+      - yamllint cloudformation-bucket.yml
+      - aws cloudformation validate-template --template-body file://cloudformation-bucket.yml
