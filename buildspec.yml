@@ -9,12 +9,6 @@ phases:
     commands:
       - pip install --upgrade pip
       - pip install yamllint
-  pre_build:
-    commands:
-      - echo Pre-Build Phase
   build:
     commands:
-      - echo Build Phase
-  post_build:
-    commands:
-      - echo Post-Build Phase
+      - ls -l
