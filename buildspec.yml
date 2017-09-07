@@ -3,6 +3,7 @@ version: 0.2
 env:
   variables:
     AWS_DEFAULT_REGION: 'us-west-2'
+    CLOUDFORMATION_TEMPLATE = cloudformation-bucket.yml
 
 phases:
   install:
@@ -11,5 +12,9 @@ phases:
       - pip install yamllint
   build:
     commands:
-      - yamllint cloudformation-bucket.yml
-      - aws cloudformation validate-template --template-body file://cloudformation-bucket.yml
+      - yamllint ${CLOUDFORMATION_TEMPLATE}
+      - aws cloudformation validate-template --template-body file://${CLOUDFORMATION_TEMPLATE}
+
+artifacts:
+  files: 
+    - ${CLOUDFORMATION_TEMPLATE}
