@@ -11,4 +11,4 @@ phases:
       - pip install yamllint
   build:
     commands:
-      - ls -l
+      - ls -al
