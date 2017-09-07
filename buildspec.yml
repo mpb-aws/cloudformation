@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     AWS_DEFAULT_REGION: 'us-west-2'
-    CLOUDFORMATION_TEMPLATE = cloudformation-bucket.yml
+    CLOUDFORMATION_TEMPLATE: cloudformation-bucket.yml
 
 phases:
   install:
